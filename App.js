@@ -1,27 +1,31 @@
+import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { Provider } from "react-redux";
 import hadithStore from "./redux/index";
-import Test from "./components/Test";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import Search from "./screens/Search";
+import About from "./screens/About";
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <Provider store={hadithStore}>
-      <View style={styles.container}>
-        <Test
-          userInput={"أَخَذَ ابْنُ مسعودٍ قَوْمًا ارْتَدُّوا عَنِ الإسلامِ"}
-        />
-        <StatusBar style="auto" />
-      </View>
-    </Provider>
+    <>
+      <StatusBar style="auto" />
+      <Provider store={hadithStore}>
+        <Drawer.Navigator
+          initialRouteName="Search"
+          screenOptions={{
+            drawerPosition: "right",
+          }}
+        >
+          <Drawer.Screen name="Search" component={Search} />
+          <Drawer.Screen name="About" component={About} />
+        </Drawer.Navigator>
+      </Provider>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});

@@ -3,7 +3,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>ContactUs</Text>
     </View>
   );
@@ -11,4 +11,10 @@ const ContactUs = () => {
 
 export default ContactUs;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

@@ -8,7 +8,7 @@ import CustomDrawerContent from "./CustomDrawerContent";
 
 const Drawer = createDrawerNavigator();
 
-const CustomDrawer = ({ size, iconColorOnFocus }) => {
+const CustomDrawer = () => {
   return (
     <Drawer.Navigator
       initialRouteName="Search"

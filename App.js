@@ -12,7 +12,7 @@ export default function App() {
       <StatusBar style="auto" />
       <Provider store={hadithStore}>
         <NavigationContainer>
-          <CustomDrawer size={24} iconColorOnFocus="blue" />
+          <CustomDrawer />
         </NavigationContainer>
       </Provider>
     </>

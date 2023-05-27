@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import BackgroundWrapper from "../components/BackgroundWrapper";
 
 const Search = () => {
   return (
-    <View style={styles.container}>
-      <Text>Search</Text>
-    </View>
+    <BackgroundWrapper>
+      <View style={styles.container}>
+        <Text>Search</Text>
+      </View>
+    </BackgroundWrapper>
   );
 };
 

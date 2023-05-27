@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import BackgroundWrapper from "../components/BackgroundWrapper";
 
 const ContactUs = () => {
   return (
-    <View style={styles.container}>
-      <Text>ContactUs</Text>
-    </View>
+    <BackgroundWrapper>
+      <View style={styles.container}>
+        <Text>ContactUs</Text>
+      </View>
+    </BackgroundWrapper>
   );
 };
 

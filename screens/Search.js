@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import BackgroundWrapper from "../components/BackgroundWrapper";
 import InputSearch from "../components/InputSearch";
+import HadithCard from "../components/HadithCard";
 
 const Search = () => {
   return (
@@ -11,7 +12,31 @@ const Search = () => {
           <InputSearch />
         </View>
         <View style={styles.listContainer}>
-          <Text>Salam</Text>
+          <View style={styles.innerListCont}>
+            <ScrollView
+              contentContainerStyle={{
+                flexGrow: 1,
+                alignItems: "center",
+                justifyContent: "flex-start",
+              }}
+              showsVerticalScrollIndicator={false}
+            >
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+              <HadithCard />
+            </ScrollView>
+          </View>
         </View>
       </View>
     </BackgroundWrapper>
@@ -29,5 +54,11 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flex: 5,
+  },
+  innerListCont: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
 });

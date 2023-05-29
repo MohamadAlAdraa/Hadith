@@ -2,7 +2,6 @@ import { StyleSheet, View } from "react-native";
 import React from "react";
 import HadithCard from "./HadithCard";
 import SocialMedia from "./SocialMedia";
-import colors from "../utils/colors";
 import HCardAndSMediaConnection from "./HCardAndSMediaConnection";
 
 const HCardAndSMediaContainer = () => {

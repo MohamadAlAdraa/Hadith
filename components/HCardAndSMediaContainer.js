@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "90%",
-    marginBottom: 40,
+    marginBottom: 30,
   },
   inContainer: {
     flex: 1,

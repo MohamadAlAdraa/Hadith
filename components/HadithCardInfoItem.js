@@ -16,11 +16,11 @@ export default HadithCardInfoItem;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row-reverse",
+    flexDirection: "row",
     marginVertical: 5,
   },
   label: {
-    marginLeft: 10,
+    marginRight: 10,
     color: colors.main,
     fontWeight: "bold",
   },

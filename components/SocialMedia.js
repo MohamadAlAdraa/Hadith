@@ -9,14 +9,14 @@ const SocialMedia = () => {
   }
   return (
     <View style={styles.container}>
+      <View style={styles.rightContainer}>
+        <SocialMediaIcon iconLabel="content-copy" onPress={shareHandler} />
+      </View>
       <View style={styles.leftContainer}>
         <SocialMediaIcon iconLabel="facebook" onPress={shareHandler} />
         <SocialMediaIcon iconLabel="instagram" onPress={shareHandler} />
         <SocialMediaIcon iconLabel="send" onPress={shareHandler} />
         <SocialMediaIcon iconLabel="whatsapp" onPress={shareHandler} />
-      </View>
-      <View style={styles.rightContainer}>
-        <SocialMediaIcon iconLabel="content-copy" onPress={shareHandler} />
       </View>
     </View>
   );
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingVertical: 8,
-    paddingHorizontal: 14,
+    paddingHorizontal: 8,
     borderWidth: 1,
     borderColor: colors.main,
     borderRadius: 10,
@@ -44,12 +44,12 @@ const styles = StyleSheet.create({
   leftContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "flex-start", // Updated
+    justifyContent: "flex-end", // Updated
     flex: 1, // Added
   },
   rightContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "flex-end", // Updated
+    justifyContent: "flex-start", // Updated
   },
 });

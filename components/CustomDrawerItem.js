@@ -52,7 +52,7 @@ export default CustomDrawerItem;
 
 const styles = StyleSheet.create({
   item: {
-    flexDirection: "row-reverse",
+    flexDirection: "row",
     alignItems: "center",
     padding: 10,
     // borderWidth: 1,
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   icon: {
-    marginRight: 8,
-    marginLeft: 32,
+    marginLeft: 8,
+    marginRight: 32,
   },
 });

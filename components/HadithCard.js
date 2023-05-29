@@ -3,10 +3,15 @@ import React from "react";
 import colors from "../utils/colors";
 import HadithCardTextContent from "./HadithCardTextContent";
 import HadithCardInfoContent from "./HadithCardInfoContent";
+import HadithCardNumber from "./HadithCardNumber";
+
 const HadithCard = () => {
   // Manage hadith data from redux in this component
   return (
     <View style={styles.card}>
+      <View style={styles.cardNumberContainer}>
+        <HadithCardNumber />
+      </View>
       <View>
         <HadithCardTextContent />
       </View>
@@ -34,6 +39,14 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingBottom: 20,
     borderWidth: 1,
+    position: "relative",
     borderColor: colors.main,
+  },
+  cardNumberContainer: {
+    position: "absolute",
+    top: -40,
+    left: 0,
+    right: 0,
+    alignItems: "center",
   },
 });

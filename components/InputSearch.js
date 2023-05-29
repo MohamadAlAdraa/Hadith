@@ -36,7 +36,7 @@ export default InputSearch;
 const styles = StyleSheet.create({
   container: {
     width: "90%",
-    flexDirection: "row-reverse",
+    flexDirection: "row",
     alignItems: "center",
     marginBottom: 40,
   },

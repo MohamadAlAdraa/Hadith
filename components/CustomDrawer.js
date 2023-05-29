@@ -37,14 +37,14 @@ const CustomDrawer = () => {
       screenOptions={{
         drawerPosition: "right",
         headerTitleAlign: "center",
-        headerRight: () => (
+        headerLeft: () => (
           <HeaderButton
             onPress={openDrawerHandler}
             style={styles.menuIcon}
             iconLabel="menu"
           />
         ),
-        headerLeft: () => (
+        headerRight: () => (
           <HeaderButton
             onPress={toggleThemeHandler}
             style={styles.themeIcon}
@@ -86,10 +86,10 @@ const CustomDrawer = () => {
 export default CustomDrawer;
 
 const styles = StyleSheet.create({
-  menuIcon: {
+  themeIcon: {
     marginRight: 18,
   },
-  themeIcon: {
+  menuIcon: {
     marginLeft: 18,
   },
 });

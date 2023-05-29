@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   line: {
     width: 2,
-    height: 20,
+    height: 10,
     backgroundColor: colors.main,
   },
   circle: {

@@ -1,64 +1,39 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, View } from "react-native";
 import React from "react";
 import BackgroundWrapper from "../components/BackgroundWrapper";
 import InputSearch from "../components/InputSearch";
-import HadithCard from "../components/HadithCard";
+import HCardAndSMediaContainer from "../components/HCardAndSMediaContainer";
 
 const Search = () => {
   return (
     <BackgroundWrapper>
-      <View style={styles.container}>
-        <View style={styles.inputContainer}>
+      <ScrollView
+        contentContainerStyle={{
+          flexGrow: 1,
+          marginTop: 30,
+          alignItems: "center",
+          justifyContent: "flex-start",
+        }}
+        showsVerticalScrollIndicator={false}
+      >
+        <View>
           <InputSearch />
         </View>
-        <View style={styles.listContainer}>
-          <View style={styles.innerListCont}>
-            <ScrollView
-              contentContainerStyle={{
-                flexGrow: 1,
-                alignItems: "center",
-                justifyContent: "flex-start",
-              }}
-              showsVerticalScrollIndicator={false}
-            >
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-              <HadithCard />
-            </ScrollView>
-          </View>
+        <View>
+          <HCardAndSMediaContainer />
+          <HCardAndSMediaContainer />
+          <HCardAndSMediaContainer />
+          <HCardAndSMediaContainer />
+          <HCardAndSMediaContainer />
+          <HCardAndSMediaContainer />
+          <HCardAndSMediaContainer />
+          <HCardAndSMediaContainer />
+          <HCardAndSMediaContainer />
+          <HCardAndSMediaContainer />
         </View>
-      </View>
+      </ScrollView>
     </BackgroundWrapper>
   );
 };
 
 export default Search;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  inputContainer: {
-    flex: 1,
-  },
-  listContainer: {
-    flex: 5,
-  },
-  innerListCont: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "flex-start",
-  },
-});

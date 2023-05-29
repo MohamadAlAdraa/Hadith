@@ -1,4 +1,4 @@
-import { Text } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import React from "react";
 import ViewMoreText from "react-native-view-more-text";
 import ViewML from "./ViewML";
@@ -14,12 +14,12 @@ const HadithCardTextContent = () => {
   }
   return (
     <ViewMoreText
-      numberOfLines={4}
+      numberOfLines={3}
       renderViewMore={renderViewMore}
       renderViewLess={renderViewLess}
-      textStyle={{ textAlign: "right" }}
+      textStyle={{ textAlign: "justify" }}
     >
-      <Text>
+      <Text style={styles.textContainer}>
         كل شيء نسبي في الحياة ، ومهما ساءت الأمور فليست شرا كلها ، ولن تجد الناس
         جميعا يجمعون على أمر واحد ، خاصة إذا تعلق الأمر بالفنون التعبيرية ودورها
         في تثقيف الإنسان والتعبير عن قضاياه ، ومن هذه الفنون الأدب والسينما .
@@ -30,3 +30,10 @@ const HadithCardTextContent = () => {
 };
 
 export default HadithCardTextContent;
+
+const styles = StyleSheet.create({
+  textContainer: {
+    writingDirection: "rtl",
+    lineHeight: 24,
+  },
+});

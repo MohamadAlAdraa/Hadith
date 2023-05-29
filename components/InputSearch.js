@@ -18,13 +18,15 @@ const InputSearch = () => {
         autoCorrect={false}
         autoCapitalize="none"
       />
-      <TouchableOpacity>
-        <Image
-          style={styles.searchIcon}
-          resizeMode="contain"
-          source={require("../assets/iconSearch.png")}
-        />
-      </TouchableOpacity>
+      <View style={styles.iconContainer}>
+        <TouchableOpacity>
+          <Image
+            style={styles.searchIcon}
+            resizeMode="center"
+            source={require("../assets/iconSearch.png")}
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -33,19 +35,24 @@ export default InputSearch;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: "90%",
     flexDirection: "row-reverse",
-    justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 40,
+    marginBottom: 40,
   },
   searchIcon: {
     width: 40,
     height: 40,
+  },
+  iconContainer: {
     flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
   },
   input: {
-    flex: 4,
+    flex: 5,
     borderWidth: 1,
     borderColor: colors.main,
     borderRadius: 10,

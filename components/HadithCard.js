@@ -21,7 +21,7 @@ export default HadithCard;
 
 const styles = StyleSheet.create({
   card: {
-    width: "90%",
+    width: "100%",
     backgroundColor: colors.white,
     borderRadius: 10,
     shadowColor: colors.black,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,
-    marginVertical: 10,
+    marginBottom: 18,
     paddingHorizontal: 10,
     paddingTop: 40,
     paddingBottom: 10,

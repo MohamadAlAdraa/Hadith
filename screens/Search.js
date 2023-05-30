@@ -11,22 +11,17 @@ const Search = () => {
         contentContainerStyle={{
           flexGrow: 1,
           marginTop: 30,
+          paddingBottom: 110,
           alignItems: "center",
           justifyContent: "flex-start",
         }}
         showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
       >
         <View>
           <InputSearch />
         </View>
         <View>
-          <HCardAndSMediaContainer />
-          <HCardAndSMediaContainer />
-          <HCardAndSMediaContainer />
-          <HCardAndSMediaContainer />
-          <HCardAndSMediaContainer />
-          <HCardAndSMediaContainer />
-          <HCardAndSMediaContainer />
           <HCardAndSMediaContainer />
           <HCardAndSMediaContainer />
           <HCardAndSMediaContainer />

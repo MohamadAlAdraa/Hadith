@@ -13,10 +13,10 @@ const SocialMedia = () => {
         <SocialMediaIcon iconLabel="content-copy" onPress={shareHandler} />
       </View>
       <View style={styles.leftContainer}>
-        <SocialMediaIcon iconLabel="facebook" onPress={shareHandler} />
-        <SocialMediaIcon iconLabel="instagram" onPress={shareHandler} />
-        <SocialMediaIcon iconLabel="send" onPress={shareHandler} />
         <SocialMediaIcon iconLabel="whatsapp" onPress={shareHandler} />
+        <SocialMediaIcon iconLabel="send" onPress={shareHandler} />
+        <SocialMediaIcon iconLabel="instagram" onPress={shareHandler} />
+        <SocialMediaIcon iconLabel="facebook" onPress={shareHandler} />
       </View>
     </View>
   );

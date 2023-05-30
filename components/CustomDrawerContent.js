@@ -18,7 +18,12 @@ const CustomDrawerContent = ({ defaultProps, onPress }) => {
 
   return (
     <>
-      <DrawerContentScrollView {...defaultProps}>
+      <DrawerContentScrollView
+        {...defaultProps}
+        style={{
+          flexGrow: 1,
+        }}
+      >
         <Logo onPress={onPress} />
         <View style={styles.container}>
           <CustomDrawerItem

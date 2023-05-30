@@ -20,7 +20,7 @@ const HCardAndSMediaContainer = () => {
           </View>
         </View>
       </View>
-      <View style={styles.inContainer}>
+      <View style={[styles.inContainer, { marginTop: -14 }]}>
         <SocialMedia />
       </View>
     </View>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     position: "absolute",
-    bottom: 0,
+    bottom: 14,
   },
   leftContainerConnection: {
     flexDirection: "row",

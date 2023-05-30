@@ -12,7 +12,7 @@ const SocialMediaIcon = ({ iconLabel, onPress }) => {
       <View style={styles.iconWrapper}>
         <MaterialCommunityIcons
           name={iconLabel}
-          size={36}
+          size={32}
           color={colors.main}
         />
       </View>
@@ -27,9 +27,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   iconWrapper: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 46,
+    height: 46,
+    borderRadius: 23,
     borderWidth: 2,
     borderColor: colors.main,
     justifyContent: "center",

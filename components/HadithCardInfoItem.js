@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     color: colors.main,
     fontWeight: "bold",
+    fontSize: 16,
   },
   labelData: {
     color: colors.golden,

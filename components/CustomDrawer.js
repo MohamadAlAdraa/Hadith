@@ -52,9 +52,8 @@ const CustomDrawer = () => {
           />
         ),
         headerTitleStyle: {
-          fontSize: 16,
           color: colors.main,
-          fontWeight: "bold",
+          fontFamily: "Amiri-Bold",
         },
       }}
     >

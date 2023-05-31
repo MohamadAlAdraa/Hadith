@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import colors from "../utils/colors";
+import CText from "./CText";
 
 const HadithCardNumber = () => {
   return (
@@ -10,7 +11,9 @@ const HadithCardNumber = () => {
         style={styles.image}
       />
       <View style={styles.textContainer}>
-        <Text style={styles.text}>100</Text>
+        <CText fontFamily="Amiri-Bold" color={colors.white}>
+          20
+        </CText>
       </View>
     </View>
   );
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     position: "absolute",
-    top: -22,
+    top: -18,
     left: 0,
     right: -5,
     bottom: 0,

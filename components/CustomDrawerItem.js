@@ -38,8 +38,8 @@ const CustomDrawerItem = ({
       <Text
         style={{
           color: isTabActiveHelper() ? colors.activeTabIc : "black",
-          fontWeight: isTabActiveHelper() ? "bold" : "normal",
-          fontSize: isTabActiveHelper() ? 16 : 14,
+          fontFamily: isTabActiveHelper() ? "Amiri-Bold" : "Amiri-Regular",
+          fontSize: isTabActiveHelper() ? 18 : 16,
         }}
       >
         {label}
@@ -54,8 +54,7 @@ const styles = StyleSheet.create({
   item: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 10,
-    // borderWidth: 1,
+    padding: 5,
     width: "94%",
     marginVertical: 5,
     alignSelf: "center",

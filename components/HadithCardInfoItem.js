@@ -1,12 +1,17 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import colors from "../utils/colors";
+import CText from "./CText";
 
 const HadithCardInfoItem = ({ label, labelData }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>{label} :</Text>
-      <Text style={styles.labelData}>{labelData ? labelData : "فارغ"}</Text>
+      <CText style={styles.label} color={colors.main} fontFamily="Amiri-Bold">
+        {label} :
+      </CText>
+      <CText color={colors.golden} fontFamily="Amiri-Bold">
+        {labelData ? labelData : "فارغ"}
+      </CText>
     </View>
   );
 };
@@ -21,12 +26,5 @@ const styles = StyleSheet.create({
   },
   label: {
     marginRight: 10,
-    color: colors.main,
-    fontWeight: "bold",
-    fontSize: 16,
-  },
-  labelData: {
-    color: colors.golden,
-    fontWeight: "bold",
   },
 });

@@ -20,10 +20,9 @@ const HadithCardTextContent = () => {
       textStyle={{ textAlign: "justify" }}
     >
       <Text style={styles.textContainer}>
-        كل شيء نسبي في الحياة ، ومهما ساءت الأمور فليست شرا كلها ، ولن تجد الناس
-        جميعا يجمعون على أمر واحد ، خاصة إذا تعلق الأمر بالفنون التعبيرية ودورها
-        في تثقيف الإنسان والتعبير عن قضاياه ، ومن هذه الفنون الأدب والسينما .
-        فما العلاقة بينهما ؟ وكيف يؤثران في شخصية الإنسان ؟
+        إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا
+        نَوَى، فَمَنْ كَانَتْ هِجْرَتُهُ إِلَى دُنْيَا يُصِيبُهَا، أَوْ إِلَى
+        امْرَأَةٍ يَنْكِحُهَا، فَهِجْرَتُهُ إِلَى مَا هَاجَرَ إِلَيْهِ
       </Text>
     </ViewMoreText>
   );
@@ -34,6 +33,8 @@ export default HadithCardTextContent;
 const styles = StyleSheet.create({
   textContainer: {
     writingDirection: "rtl",
-    lineHeight: 24,
+    lineHeight: 30,
+    fontFamily: "Amiri-Regular",
+    fontSize: 18,
   },
 });

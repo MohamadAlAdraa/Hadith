@@ -18,6 +18,9 @@ I18nManager.allowRTL(true);
 export default function App() {
   const [fontsLoaded] = useFonts({
     "Amiri-Regular": require("./assets/fonts/Amiri-Regular.ttf"),
+    "Amiri-Bold": require("./assets/fonts/Amiri-Bold.ttf"),
+    "Amiri-Italic": require("./assets/fonts/Amiri-Italic.ttf"),
+    "Amiri-BoldItalic": require("./assets/fonts/Amiri-BoldItalic.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {

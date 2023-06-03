@@ -1,4 +1,4 @@
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
 import React from "react";
 
 const CText = ({
@@ -28,5 +28,3 @@ const CText = ({
 };
 
 export default CText;
-
-const styles = StyleSheet.create({});

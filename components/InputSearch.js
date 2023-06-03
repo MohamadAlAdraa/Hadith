@@ -10,24 +10,54 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import colors from "../utils/colors";
 import { useState } from "react";
+import Toast from "react-native-toast-message";
+import { validate } from "../utils/InputSearchValidation";
+import { VALIDATION_STATE, MESSAGE_TYPE } from "../utils/CONSTS";
+import { useDispatch } from "react-redux";
+import { SearchHadith_API } from "../redux/hadith/hadith-slice";
 
 const InputSearch = () => {
   const [searchValue, setSearchValue] = useState("");
+  const dispatch = useDispatch();
 
   function clear() {
     Keyboard.dismiss();
     console.log("search clear pressed");
-    setSearchValue("");
+    setSearchValue((oldSeacrchValue) => (oldSeacrchValue = ""));
   }
 
   function searchInputHandler(input) {
-    setSearchValue(input);
+    setSearchValue((oldSeacrchValue) => (oldSeacrchValue = input));
   }
+
+  const showToast = (type, text1) => {
+    Toast.show({
+      type: type,
+      text1: text1,
+    });
+  };
 
   function search() {
     Keyboard.dismiss();
-    console.log("search icon pressed");
-    console.log(searchValue);
+    const vr = validate(searchValue);
+    switch (vr) {
+      case VALIDATION_STATE.EMPTY:
+        console.log("empty");
+        setSearchValue((oldSeacrchValue) => (oldSeacrchValue = ""));
+        showToast(MESSAGE_TYPE.ERROR, "الرجاء كتابة كلمات من الحديث للبحث.");
+        break;
+      case VALIDATION_STATE.LANGUAGE:
+        setSearchValue((oldSeacrchValue) => (oldSeacrchValue = ""));
+        showToast(MESSAGE_TYPE.ERROR, "عذرًا، البحث متاح فقط باللغة العربية.");
+        break;
+      case VALIDATION_STATE.RANGE:
+        setSearchValue((oldSeacrchValue) => (oldSeacrchValue = ""));
+        showToast(MESSAGE_TYPE.ERROR, "البحث يتطلب كتابة كلمتين على الأقل.");
+        break;
+      case VALIDATION_STATE.VALID:
+        dispatch(SearchHadith_API(searchValue));
+        break;
+    }
   }
 
   return (
@@ -40,7 +70,7 @@ const InputSearch = () => {
         />
       </Pressable>
       <TextInput
-        placeholder="ابحث بكلمة أو جملة"
+        placeholder="ابحث..."
         style={styles.input}
         autoComplete="off"
         autoCorrect={false}
@@ -79,6 +109,7 @@ const styles = StyleSheet.create({
     borderRightColor: colors.main,
     backgroundColor: "white",
     borderLeftWidth: 1,
+    textAlign: "right",
     borderRightWidth: 1,
     borderLeftColor: colors.main,
     borderRightColor: colors.main,

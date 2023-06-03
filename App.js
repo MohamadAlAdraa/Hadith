@@ -9,6 +9,8 @@ import { I18nManager } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
+import Toast from "react-native-toast-message";
+import toastConfig from "./components/InfoMessage";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -34,14 +36,17 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <StatusBar style="auto" />
-      <Provider store={hadithStore}>
-        <NavigationContainer>
-          <CustomDrawer />
-        </NavigationContainer>
-      </Provider>
-    </View>
+    <>
+      <View style={styles.container} onLayout={onLayoutRootView}>
+        <StatusBar style="auto" />
+        <Provider store={hadithStore}>
+          <NavigationContainer>
+            <CustomDrawer />
+          </NavigationContainer>
+        </Provider>
+      </View>
+      <Toast config={toastConfig} />
+    </>
   );
 }
 

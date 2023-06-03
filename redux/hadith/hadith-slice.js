@@ -1,18 +1,18 @@
 import { createSlice, createAsyncThunk, isRejected } from "@reduxjs/toolkit";
 import axios from "../../utils/http";
+import { APIS } from "../../utils/CONSTS";
 
-export const CheckHadith_API = createAsyncThunk(
-  "CheckHadith_API",
+export const SearchHadith_API = createAsyncThunk(
+  "SearchHadith_API",
   async (userInput) => {
-    const { data } = await axios.get("/v1/api/hadith/search", {
-      value: userInput,
-    });
+    const { data } = await axios.get(APIS.baseURL + APIS.searchAPI + userInput);
     return data;
   }
 );
 
 const initialState = {
   data: null,
+  metadata: null,
   loading: false,
   error: false,
 };
@@ -23,11 +23,12 @@ const hadithSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(CheckHadith_API.fulfilled, (state, { payload }) => {
+      .addCase(SearchHadith_API.fulfilled, (state, { payload }) => {
         state.data = payload.data;
+        state.metadata = payload.metadata;
         state.loading = false;
       })
-      .addCase(CheckHadith_API.pending, (state) => {
+      .addCase(SearchHadith_API.pending, (state) => {
         state.loading = true;
       })
       .addMatcher(isRejected, (state) => {

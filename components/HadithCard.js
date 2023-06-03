@@ -5,18 +5,18 @@ import HadithCardTextContent from "./HadithCardTextContent";
 import HadithCardInfoContent from "./HadithCardInfoContent";
 import HadithCardNumber from "./HadithCardNumber";
 
-const HadithCard = () => {
+const HadithCard = ({ data, hadithNumber }) => {
   // Manage hadith data from redux in this component
   return (
     <View style={styles.card}>
       <View style={styles.cardNumberContainer}>
-        <HadithCardNumber />
+        <HadithCardNumber hadithNumber={hadithNumber} />
       </View>
       <View>
-        <HadithCardTextContent />
+        <HadithCardTextContent data={data} />
       </View>
       <View>
-        <HadithCardInfoContent />
+        <HadithCardInfoContent data={data} />
       </View>
     </View>
   );
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 5,
-    marginBottom: 8,
+    marginBottom: 15,
     paddingHorizontal: 15,
     paddingTop: 20,
     paddingBottom: 12,

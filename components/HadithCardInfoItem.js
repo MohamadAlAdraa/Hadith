@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React from "react";
 import colors from "../utils/colors";
 import CText from "./CText";
@@ -9,8 +9,9 @@ const HadithCardInfoItem = ({ label, labelData }) => {
       <CText style={styles.label} color={colors.main} fontFamily="Amiri-Bold">
         {label} :
       </CText>
+
       <CText color={colors.golden} fontFamily="Amiri-Bold">
-        {labelData ? labelData : "فارغ"}
+        {labelData ? labelData : "لا يوجد"}
       </CText>
     </View>
   );
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     marginVertical: 5,
+    flexWrap: "wrap",
   },
   label: {
     marginRight: 10,

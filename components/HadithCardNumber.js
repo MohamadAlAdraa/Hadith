@@ -3,7 +3,7 @@ import React from "react";
 import colors from "../utils/colors";
 import CText from "./CText";
 
-const HadithCardNumber = () => {
+const HadithCardNumber = ({ hadithNumber }) => {
   return (
     <View style={styles.container}>
       <Image
@@ -12,7 +12,7 @@ const HadithCardNumber = () => {
       />
       <View style={styles.textContainer}>
         <CText fontFamily="Amiri-Bold" color={colors.white}>
-          20
+          {hadithNumber + 1}
         </CText>
       </View>
     </View>

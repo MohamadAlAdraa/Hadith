@@ -1,7 +1,7 @@
 import axios from "axios";
-
+import { APIS } from "./CONSTS";
 const instance = axios.create({
-  baseURL: "https://dorar-hadith-api.cyclic.app/",
+  baseURL: APIS.baseURL,
 });
 
 export default instance;

@@ -4,11 +4,11 @@ import HadithCard from "./HadithCard";
 import SocialMedia from "./SocialMedia";
 import HCardAndSMediaConnection from "./HCardAndSMediaConnection";
 
-const HCardAndSMediaContainer = () => {
+const HCardAndSMediaContainer = ({ data, hadithNumber }) => {
   return (
     <View style={styles.container}>
       <View style={styles.inContainer}>
-        <HadithCard />
+        <HadithCard data={data} hadithNumber={hadithNumber} />
       </View>
       <View style={styles.inContainerCon}>
         <View style={styles.connection}>
@@ -20,7 +20,7 @@ const HCardAndSMediaContainer = () => {
           </View>
         </View>
       </View>
-      <View style={[styles.inContainer, { marginTop: -14 }]}>
+      <View style={styles.inContainer}>
         <SocialMedia />
       </View>
     </View>
@@ -31,9 +31,8 @@ export default HCardAndSMediaContainer;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    width: "90%",
-    marginBottom: 30,
+    width: "100%",
+    marginBottom: 40,
   },
   inContainer: {
     flex: 1,
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     position: "absolute",
-    bottom: 14,
+    bottom: 1,
   },
   leftContainerConnection: {
     flexDirection: "row",

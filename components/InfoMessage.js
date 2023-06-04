@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     fontFamily: "Amiri-Regular",
+    writingDirection: "rtl",
   },
 });
 

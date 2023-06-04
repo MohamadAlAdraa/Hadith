@@ -10,9 +10,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import colors from "../utils/colors";
 import { useState } from "react";
-import Toast from "react-native-toast-message";
 import { validate } from "../utils/InputSearchValidation";
-import { VALIDATION_STATE, MESSAGE_TYPE } from "../utils/CONSTS";
+import { VALIDATION_STATE, MESSAGE_TYPE, showToast } from "../utils/CONSTS";
 import { useDispatch } from "react-redux";
 import { SearchHadith_API } from "../redux/hadith/hadith-slice";
 
@@ -29,13 +28,6 @@ const InputSearch = () => {
   function searchInputHandler(input) {
     setSearchValue((oldSeacrchValue) => (oldSeacrchValue = input));
   }
-
-  const showToast = (type, text1) => {
-    Toast.show({
-      type: type,
-      text1: text1,
-    });
-  };
 
   function search() {
     Keyboard.dismiss();

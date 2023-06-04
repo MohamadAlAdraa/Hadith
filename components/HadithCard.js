@@ -4,11 +4,17 @@ import colors from "../utils/colors";
 import HadithCardTextContent from "./HadithCardTextContent";
 import HadithCardInfoContent from "./HadithCardInfoContent";
 import HadithCardNumber from "./HadithCardNumber";
-
+import { useSelector } from "react-redux";
 const HadithCard = ({ data, hadithNumber }) => {
-  // Manage hadith data from redux in this component
+  const themeState = useSelector((state) => state.theme.morning);
+
   return (
-    <View style={styles.card}>
+    <View
+      style={[
+        styles.card,
+        { backgroundColor: themeState ? colors.white : colors.black },
+      ]}
+    >
       <View style={styles.cardNumberContainer}>
         <HadithCardNumber hadithNumber={hadithNumber} />
       </View>
@@ -27,7 +33,6 @@ export default HadithCard;
 const styles = StyleSheet.create({
   card: {
     width: "100%",
-    backgroundColor: colors.white,
     borderRadius: 10,
     shadowColor: colors.black,
     shadowOffset: { width: 0, height: 2 },

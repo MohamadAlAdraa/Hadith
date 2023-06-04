@@ -8,11 +8,14 @@ import CustomDrawerContent from "./CustomDrawerContent";
 import HeaderButton from "./HeaderButton";
 import colors from "../utils/colors";
 import { useNavigation, DrawerActions } from "@react-navigation/native";
-
+import { useDispatch, useSelector } from "react-redux";
+import { themeActions } from "../redux/theme/theme-slice";
 const Drawer = createDrawerNavigator();
 
 const CustomDrawer = () => {
   const navigation = useNavigation();
+  const dispath = useDispatch();
+  const themeState = useSelector((state) => state.theme.morning);
 
   const openDrawerHandler = () => {
     navigation.dispatch(DrawerActions.openDrawer());
@@ -23,7 +26,7 @@ const CustomDrawer = () => {
   };
 
   const toggleThemeHandler = () => {
-    // use redux state to change the card color and background
+    dispath(themeActions.toggleTheme());
   };
   return (
     <Drawer.Navigator
@@ -49,6 +52,7 @@ const CustomDrawer = () => {
             onPress={toggleThemeHandler}
             style={styles.themeIcon}
             iconLabel="theme-light-dark"
+            color={themeState ? colors.sun : colors.moon}
           />
         ),
         headerTitleStyle: {

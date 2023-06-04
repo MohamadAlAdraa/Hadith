@@ -2,11 +2,18 @@ import { StyleSheet, View } from "react-native";
 import React from "react";
 import colors from "../utils/colors";
 import CText from "./CText";
+import { useSelector } from "react-redux";
 
 const HadithCardInfoItem = ({ label, labelData }) => {
+  const themeState = useSelector((state) => state.theme.morning);
+
   return (
     <View style={styles.container}>
-      <CText style={styles.label} color={colors.main} fontFamily="Amiri-Bold">
+      <CText
+        style={styles.label}
+        color={themeState ? colors.main : colors.white}
+        fontFamily="Amiri-Bold"
+      >
         {label} :
       </CText>
 

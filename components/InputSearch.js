@@ -21,7 +21,6 @@ const InputSearch = () => {
 
   function clear() {
     Keyboard.dismiss();
-    console.log("search clear pressed");
     setSearchValue((oldSeacrchValue) => (oldSeacrchValue = ""));
   }
 
@@ -34,7 +33,6 @@ const InputSearch = () => {
     const vr = validate(searchValue);
     switch (vr) {
       case VALIDATION_STATE.EMPTY:
-        console.log("empty");
         setSearchValue((oldSeacrchValue) => (oldSeacrchValue = ""));
         showToast(MESSAGE_TYPE.ERROR, "الرجاء كتابة كلمات من الحديث للبحث.");
         break;

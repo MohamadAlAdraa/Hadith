@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     position: "absolute",
-    bottom: 1,
+    bottom: 0,
   },
   leftContainerConnection: {
     flexDirection: "row",

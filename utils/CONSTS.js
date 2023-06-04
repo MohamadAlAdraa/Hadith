@@ -1,3 +1,5 @@
+import Toast from "react-native-toast-message";
+
 export const APIS = {
   baseURL: "https://dorar-hadith-api.cyclic.app",
   searchAPI: "/v1/site/hadith/search?value=",
@@ -30,3 +32,10 @@ export function generateUniqueKey(length) {
 
   return key;
 }
+
+export const showToast = (type, text1) => {
+  Toast.show({
+    type: type,
+    text1: text1,
+  });
+};

@@ -16,6 +16,7 @@ import { generateUniqueKey } from "../utils/CONSTS";
 const Search = () => {
   const hadithStateLoading = useSelector((state) => state.hadith.loading);
   const hadithStateData = useSelector((state) => state.hadith.data);
+  const hadithStateErro = useSelector((state) => state.hadith.error);
 
   return (
     <BackgroundWrapper>
@@ -23,11 +24,11 @@ const Search = () => {
         contentContainerStyle={{
           flexGrow: 1,
           marginTop: 30,
-          paddingBottom: 50,
+          paddingBottom: 30,
           alignItems: "center",
           justifyContent: "flex-start",
         }}
-        // showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       >
         <>
@@ -47,6 +48,10 @@ const Search = () => {
                   />
                 );
               })}
+            </View>
+          ) : hadithStateErro ? (
+            <View>
+              <Text>Error</Text>
             </View>
           ) : (
             <View style={styles.container}>

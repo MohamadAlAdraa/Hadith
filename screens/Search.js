@@ -23,6 +23,7 @@ const Search = () => {
       <ScrollView
         contentContainerStyle={{
           flexGrow: 1,
+          width: "100%",
           marginTop: 30,
           paddingBottom: 30,
           alignItems: "center",
@@ -32,13 +33,11 @@ const Search = () => {
         keyboardShouldPersistTaps="handled"
       >
         <>
-          <View>
-            <InputSearch />
-          </View>
+          <InputSearch />
           {hadithStateLoading ? (
             <ActivityIndicator color={colors.main} size="large" />
           ) : hadithStateData ? (
-            <View style={styles.container1}>
+            <View style={{ width: "90%" }}>
               {hadithStateData.map((item, idx) => {
                 return (
                   <HCardAndSMediaContainer
@@ -100,6 +99,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "Amiri-Bold",
     fontSize: 20,
+    writingDirection: "rtl",
   },
   innetText: {
     color: colors.golden,

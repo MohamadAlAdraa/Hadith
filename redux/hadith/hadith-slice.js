@@ -9,7 +9,6 @@ export const SearchHadith_API = createAsyncThunk(
       const { data } = await axios.get(
         APIS.baseURL + APIS.searchAPI + userInput
       );
-      console.log("done");
       return data;
     } catch (error) {
       if (error.isAxiosError && !error.response) {
@@ -45,7 +44,6 @@ const hadithSlice = createSlice({
       .addMatcher(
         (action) => action.type === `${SearchHadith_API.rejected}`,
         (state, { payload }) => {
-          console.log(payload);
           state.error = true;
           state.loading = false;
         }

@@ -97,9 +97,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.main,
   },
-  container1: {
-    width: "90%",
-  },
   text: {
     fontFamily: "Amiri-Bold",
     fontSize: 20,

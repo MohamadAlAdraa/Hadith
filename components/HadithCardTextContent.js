@@ -2,8 +2,12 @@ import React from "react";
 import ViewMoreText from "react-native-view-more-text";
 import ViewML from "./ViewML";
 import CText from "./CText";
+import { useSelector } from "react-redux";
+import colors from "../utils/colors";
 
 const HadithCardTextContent = ({ data }) => {
+  const themeState = useSelector((state) => state.theme.morning);
+
   function renderViewMore(onPress) {
     return (
       <ViewML label="عرض المزيد" iconLabel="chevron-down" onPress={onPress} />
@@ -19,7 +23,9 @@ const HadithCardTextContent = ({ data }) => {
       renderViewLess={renderViewLess}
       textStyle={{ textAlign: "justify" }}
     >
-      <CText lineHeight={30}>{data.hadith}</CText>
+      <CText lineHeight={30} color={!themeState && colors.white}>
+        {data.hadith}
+      </CText>
     </ViewMoreText>
   );
 };

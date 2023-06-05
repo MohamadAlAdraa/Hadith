@@ -4,17 +4,18 @@ import colors from "../utils/colors";
 const InitialSearchPageContent = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{`\u2022`}البحث متاح فقط باللغة العربية</Text>
+      <Text style={styles.text}>{`\u2022`}البحث متاح فقط باللغة العربية.</Text>
       <Text style={styles.text}>
-        {`\u2022`}يمكنك البحث بكتابة بعض الكلمات من الحديث
+        {`\u2022`}يمكنك البحث بكتابة بعض الكلمات من الحديث.
       </Text>
+      <Text style={styles.text}>{`\u2022`}النتائج ستظهر لك 30 حديث.</Text>
       <Text style={styles.text}>
         {`\u2022`}نتجية البحث تعرض :{" "}
         <Text style={styles.innetText}>الروايات الواردة في كتب الحديث</Text> |{" "}
         <Text style={styles.innetText}>الراوي</Text> |{" "}
         <Text style={styles.innetText}>المحدث</Text> |{" "}
         <Text style={styles.innetText}>المصدر</Text> |{" "}
-        <Text style={styles.innetText}>خلاصة حكم الحديث</Text>
+        <Text style={styles.innetText}>خلاصة حكم الحديث.</Text>
       </Text>
     </View>
   );

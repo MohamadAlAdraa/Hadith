@@ -1,4 +1,10 @@
-import { ScrollView, View, StyleSheet, ActivityIndicator } from "react-native";
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  ActivityIndicator,
+  Text,
+} from "react-native";
 import React, { useEffect } from "react";
 import BackgroundWrapper from "../components/BackgroundWrapper";
 import InputSearch from "../components/InputSearch";
@@ -32,6 +38,9 @@ const Search = () => {
           {hadithStateLoading ? (
             <>
               <ActivityIndicator color={colors.black} size="large" />
+              <Text style={{ fontFamily: "Amiri-Regular" }}>
+                يرجى الانتظار جاري البحث...
+              </Text>
               <TasbihLoading />
             </>
           ) : hadithStateData ? (

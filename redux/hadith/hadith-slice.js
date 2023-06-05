@@ -7,7 +7,7 @@ export const SearchHadith_API = createAsyncThunk(
   async (userInput, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        APIS.baseURL + APIS.searchAPI + userInput
+        APIS.baseURL + APIS.searchAPI + userInput + "&t=*"
       );
       return data;
     } catch (error) {

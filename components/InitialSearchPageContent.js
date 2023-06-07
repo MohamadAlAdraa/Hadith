@@ -8,6 +8,7 @@ const InitialSearchPageContent = () => {
       <Text style={styles.text}>
         {`\u2022`}يمكنك البحث بكتابة بعض الكلمات من الحديث.
       </Text>
+      <Text style={styles.text}>{`\u2022`}شرح للأحاديث الصحيحة.</Text>
       <Text style={styles.text}>{`\u2022`}النتائج ستظهر لك 30 حديث.</Text>
       <Text style={styles.text}>
         {`\u2022`}نتجية البحث تعرض :{" "}

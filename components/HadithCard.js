@@ -5,7 +5,7 @@ import HadithCardTextContent from "./HadithCardTextContent";
 import HadithCardInfoContent from "./HadithCardInfoContent";
 import HadithCardNumber from "./HadithCardNumber";
 import { useSelector } from "react-redux";
-const HadithCard = ({ data, hadithNumber }) => {
+const HadithCard = ({ data, hadithNumber, navigation }) => {
   const themeState = useSelector((state) => state.theme.morning);
 
   return (
@@ -22,7 +22,7 @@ const HadithCard = ({ data, hadithNumber }) => {
         <HadithCardTextContent data={data} />
       </View>
       <View>
-        <HadithCardInfoContent data={data} />
+        <HadithCardInfoContent data={data} navigation={navigation} />
       </View>
     </View>
   );

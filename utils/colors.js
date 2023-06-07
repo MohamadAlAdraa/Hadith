@@ -12,6 +12,7 @@ const colors = {
   neon: "#00FFFF",
   sun: "#FDB813",
   moon: "#C0C0C0",
+  disabled: "#A9A9A9",
 };
 
 export default colors;

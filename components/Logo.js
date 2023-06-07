@@ -5,7 +5,7 @@ const Logo = ({ onPress }) => {
   return (
     <Pressable onPress={onPress}>
       <View style={styles.header}>
-        <Image source={require("../assets/logo.png")} style={styles.logo} />
+        <Image source={require("../assets/logo11.png")} style={styles.logo} />
       </View>
     </Pressable>
   );
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     borderBottomColor: "#ECECEC",
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 160,
+    height: 160,
     resizeMode: "contain",
   },
 });

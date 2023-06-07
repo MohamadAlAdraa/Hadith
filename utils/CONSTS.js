@@ -39,3 +39,26 @@ export const showToast = (type, text1) => {
     text1: text1,
   });
 };
+
+export function removeTextBeforeBlankLines(text) {
+  const lines = text.split("\n");
+  let startIndex = -1;
+
+  for (let i = 0; i < lines.length - 2; i++) {
+    if (
+      lines[i].trim() === "" &&
+      lines[i + 1].trim() === "" &&
+      lines[i + 2].trim() === ""
+    ) {
+      startIndex = i + 3;
+      break;
+    }
+  }
+
+  if (startIndex !== -1) {
+    const result = lines.slice(startIndex).join("\n");
+    return result;
+  } else {
+    return text;
+  }
+}

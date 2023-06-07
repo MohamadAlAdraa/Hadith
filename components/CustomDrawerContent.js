@@ -28,10 +28,17 @@ const CustomDrawerContent = ({ defaultProps, onPress }) => {
         <View style={styles.container}>
           <CustomDrawerItem
             isTabActive={isTabActive}
-            tabName="Search"
+            tabName="Home"
             onPress={onPressItemHandler}
             iconLabel="book-open-page-variant"
             label="تحقق من الحديث"
+          />
+          <CustomDrawerItem
+            isTabActive={isTabActive}
+            tabName="Favorites"
+            onPress={onPressItemHandler}
+            iconLabel="heart"
+            label="أحاديثك المفضلة"
           />
           <CustomDrawerItem
             isTabActive={isTabActive}

@@ -57,7 +57,9 @@ const Search = ({ navigation }) => {
               </Text>
               <TasbihLoading />
             </>
-          ) : hadithStateData ? (
+          ) : !hadithStateData ? (
+            <InitialSearchPageContent />
+          ) : hadithStateData.length > 0 ? (
             <View style={styles.listContainer}>
               {hadithStateData.map((item, idx) => {
                 return (
@@ -71,7 +73,15 @@ const Search = ({ navigation }) => {
               })}
             </View>
           ) : (
-            <InitialSearchPageContent />
+            <Text
+              style={{
+                fontFamily: "Amiri-Bold",
+                fontSize: 20,
+                color: colors.error,
+              }}
+            >
+              لا يوجد نتائح في البحث؛ حاول صياغة نص البحث...
+            </Text>
           )}
         </>
       </ScrollView>

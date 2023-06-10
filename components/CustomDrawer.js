@@ -49,14 +49,6 @@ const CustomDrawer = () => {
             iconLabel="menu"
           />
         ),
-        headerRight: () => (
-          <HeaderButton
-            onPress={toggleThemeHandler}
-            style={styles.themeIcon}
-            iconLabel="theme-light-dark"
-            color={themeState ? colors.sun : colors.moon}
-          />
-        ),
         headerTitleStyle: {
           color: colors.main,
           fontFamily: "Amiri-Bold",
@@ -88,6 +80,14 @@ const CustomDrawer = () => {
         component={Favorites}
         options={{
           headerTitle: "أحاديثك المفضلة",
+          headerRight: () => (
+            <HeaderButton
+              onPress={toggleThemeHandler}
+              style={styles.themeIcon}
+              iconLabel="theme-light-dark"
+              color={themeState ? colors.sun : colors.moon}
+            />
+          ),
         }}
       />
       <Drawer.Screen

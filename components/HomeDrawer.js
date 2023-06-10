@@ -4,6 +4,7 @@ import HadithExplanation from "../screens/HadithExplanation";
 import { createStackNavigator } from "@react-navigation/stack";
 import colors from "../utils/colors";
 import HeaderButton from "./HeaderButton";
+import { useSelector } from "react-redux";
 
 const Tab = createStackNavigator();
 
@@ -14,6 +15,8 @@ const HomeDrawer = ({
   styles,
   navigation,
 }) => {
+  const hadithStateData = useSelector((state) => state.hadith.data);
+
   function goBackHome() {
     navigation.goBack();
   }
@@ -39,14 +42,15 @@ const HomeDrawer = ({
               iconLabel="menu"
             />
           ),
-          headerRight: () => (
-            <HeaderButton
-              onPress={toggleThemeHandler}
-              style={styles.themeIcon}
-              iconLabel="theme-light-dark"
-              color={themeState ? colors.sun : colors.moon}
-            />
-          ),
+          headerRight: () =>
+            hadithStateData && hadithStateData.length > 0 ? (
+              <HeaderButton
+                onPress={toggleThemeHandler}
+                style={styles.themeIcon}
+                iconLabel="theme-light-dark"
+                color={themeState ? colors.sun : colors.moon}
+              />
+            ) : null,
         }}
       />
       <Tab.Screen

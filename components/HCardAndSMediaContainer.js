@@ -4,11 +4,15 @@ import HadithCard from "./HadithCard";
 import SocialMedia from "./SocialMedia";
 import HCardAndSMediaConnection from "./HCardAndSMediaConnection";
 
-const HCardAndSMediaContainer = ({ data, hadithNumber }) => {
+const HCardAndSMediaContainer = ({ data, hadithNumber, navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.inContainer}>
-        <HadithCard data={data} hadithNumber={hadithNumber} />
+        <HadithCard
+          data={data}
+          hadithNumber={hadithNumber}
+          navigation={navigation}
+        />
       </View>
       <View style={styles.inContainerCon}>
         <View style={styles.connection}>

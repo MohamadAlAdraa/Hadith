@@ -67,6 +67,8 @@ const InputSearch = () => {
         autoCapitalize="none"
         value={searchValue}
         onChangeText={searchInputHandler}
+        onSubmitEditing={search}
+        returnKeyType="done"
       />
       <Pressable style={styles.outerContainerClear} onPress={clear}>
         <View style={styles.innerContainerClear}>

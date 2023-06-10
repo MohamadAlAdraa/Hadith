@@ -1,15 +1,17 @@
 import { StyleSheet } from "react-native";
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import Search from "../screens/Search";
 import About from "../screens/About";
 import ContactUs from "../screens/ContactUs";
+import Favorites from "../screens/Favorites";
 import CustomDrawerContent from "./CustomDrawerContent";
-import HeaderButton from "./HeaderButton";
 import colors from "../utils/colors";
 import { useNavigation, DrawerActions } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
 import { themeActions } from "../redux/theme/theme-slice";
+import HomeDrawer from "./HomeDrawer";
+import HeaderButton from "./HeaderButton";
+
 const Drawer = createDrawerNavigator();
 
 const CustomDrawer = () => {
@@ -30,7 +32,7 @@ const CustomDrawer = () => {
   };
   return (
     <Drawer.Navigator
-      initialRouteName="Search"
+      initialRouteName="Home"
       drawerContent={(props) => (
         <CustomDrawerContent
           defaultProps={props}
@@ -62,10 +64,30 @@ const CustomDrawer = () => {
       }}
     >
       <Drawer.Screen
-        name="Search"
-        component={Search}
+        name="Home"
         options={{
-          headerTitle: "الصفحة الرئيسية",
+          headerShown: false,
+          openDrawerHandler: openDrawerHandler,
+          toggleThemeHandler: toggleThemeHandler,
+          themeState: themeState,
+          styles: styles,
+        }}
+      >
+        {(props) => (
+          <HomeDrawer
+            {...props}
+            openDrawerHandler={openDrawerHandler}
+            toggleThemeHandler={toggleThemeHandler}
+            themeState={themeState}
+            styles={styles}
+          />
+        )}
+      </Drawer.Screen>
+      <Drawer.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{
+          headerTitle: "أحاديثك المفضلة",
         }}
       />
       <Drawer.Screen
@@ -89,8 +111,14 @@ const CustomDrawer = () => {
 export default CustomDrawer;
 
 const styles = StyleSheet.create({
+  goBackIcon: {
+    marginRight: 12,
+  },
   themeIcon: {
     marginRight: 18,
+  },
+  themeIconleft: {
+    marginLeft: 18,
   },
   menuIcon: {
     marginLeft: 18,
